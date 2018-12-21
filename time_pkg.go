@@ -10,14 +10,9 @@ func main() {
 	fmt.Println("----- Basic usage -----")
 	now := time.Now()
 	fmt.Println("Now()        : " + now.String())
-	
 	time1 := time.Date(2018, 10, 15, 16, 48, 32, 12345, time.Local)
 	fmt.Println("Date()       : " + time1.String())
-	
-	now = now.Add(time.Duration(-1) * time.Hour)
-	fmt.Println("time 1 hour ago : " + now.String())
 	fmt.Println()
-	
 	
 	fmt.Println("----- Functions -----")
 	fmt.Println("Year()       : " + strconv.Itoa(now.Year()))
@@ -55,6 +50,12 @@ func main() {
 	fmt.Println("Zone() (name,offset) : " + "( " + zoneName + " , " + strconv.Itoa(zoneOffset) + " )")
 	fmt.Println()
 
+	fmt.Println("----- Add -----")
+	fmt.Println("Now()           : " + now.String())
+	now = now.Add(time.Duration(-1) * time.Hour)
+	fmt.Println("time 1 hour ago : " + now.String())
+	fmt.Println()
+	
 	fmt.Println("----- Parse() Format()-----")
 	var timeParse01 = time.Time{}
 	timeParse01, _  = time.Parse("2006/01/02 15:04:05 (MST)", "2018/12/21 13:45:38 (JST)")
