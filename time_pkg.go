@@ -130,4 +130,13 @@ func main() {
 	fmt.Println("time10.Truncate(time.Minute): " + time10.Truncate(time.Minute).String())
 	fmt.Println("time10.Truncate(time.Second): " + time10.Truncate(time.Second).String())
 	fmt.Println()
+
+	fmt.Println("----- IsZero() -----")
+	timeRight, _  := time.Parse("2006/01/02 15:04", "2018/12/21 13:45")
+	timeFail, _   := time.Parse("2006/01/02 15:04", "2018/12/21 hoge 13:45")
+	fmt.Println("timeRight   : " + timeRight.String())
+	fmt.Println("timeFail    : " + timeFail.String())
+	fmt.Println("timeRight.IsZero()   : " + strconv.FormatBool(timeRight.IsZero()))
+	fmt.Println("timeFail.IsZero()    : " + strconv.FormatBool(timeFail.IsZero()))
+	fmt.Println()
 }
